@@ -8,7 +8,7 @@ function renderNavigation($current_page = '') {
     echo '<header>
         <nav class="navbar">
             <div class="nav-brand">
-                <a href="index.php">TailorCraft</a>
+                <a href="index.php">E-Tailor</a>
             </div>
             <ul class="nav-menu">
                 <li><a href="index.php"' . ($current_page == 'home' ? ' class="active"' : '') . '>Home</a></li>

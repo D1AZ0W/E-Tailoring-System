@@ -69,11 +69,6 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                     <a href="cart.php" class="cart-link">Cart (<?php echo $cart_count; ?>)</a>
                 <?php endif; ?>
             </div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </nav>
     </header>
 
@@ -86,13 +81,12 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
             <h1>Get In Touch</h1>
 
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-top: 2rem;">
-                <!-- Contact Information -->
                 <div style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
                     <h2>Contact Information</h2>
                     
                     <div style="margin: 2rem 0;">
                         <h4>📍 Address</h4>
-                        <p>New Road, Kathmandu<br>Nepal 44600</p>
+                        <p>Bagbazar, Kathmandu<br>Nepal </p>
                     </div>
                     
                     <div style="margin: 2rem 0;">
@@ -102,16 +96,15 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                     
                     <div style="margin: 2rem 0;">
                         <h4>✉️ Email</h4>
-                        <p>contact@tailorcraft.com<br>info@tailorcraft.com</p>
+                        <p>contact_etailor@gmail.com<br>info_etailor@gmail.com</p>
                     </div>
                     
                     <div style="margin: 2rem 0;">
                         <h4>🕒 Business Hours</h4>
-                        <p>Monday - Friday: 9:00 AM - 7:00 PM<br>Saturday: 10:00 AM - 5:00 PM<br>Sunday: Closed</p>
+                        <p>Sunday - Friday: 10:00 AM - 7:00 PM<br>Saturday: 12:00 PM - 4:00 PM<br></p>
                     </div>
                 </div>
                 
-                <!-- Contact Form -->
                 <div class="form-container" style="margin: 0;">
                     <h2>Send us a Message</h2>
                     
@@ -163,7 +156,7 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
             <div class="footer-content">
                 <div class="footer-section">
                     <h3>TailorCraft</h3>
-                    <p>Bespoke tailoring for the modern individual.</p>
+                    <p>Tailored Clothing, Your Way.</p>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>

@@ -1,8 +1,5 @@
 <?php
 session_start();
-// This script handles the final order placement.
-
-// Check if user is logged in
 if (!isset($_SESSION['user_id'])) {
     $_SESSION['message'] = 'Please log in to proceed with checkout.';
     $_SESSION['message_type'] = 'error';
@@ -10,7 +7,6 @@ if (!isset($_SESSION['user_id'])) {
     exit;
 }
 
-// Check if cart is empty
 if (empty($_SESSION['cart'])) {
     $_SESSION['message'] = 'Your cart is empty. Add some items before checkout.';
     $_SESSION['message_type'] = 'error';
@@ -23,14 +19,12 @@ include 'config/database.php';
 $message = '';
 $message_type = '';
 
-// Calculate cart total
 $cart = $_SESSION['cart'];
 $total = 0;
 foreach ($cart as $item) {
     $total += $item['total_price'] * $item['quantity'];
 }
 
-// Handle order submission
 if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $database = new Database();
     $db = $database->getConnection();
@@ -40,7 +34,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         $order_number = 'TC' . date('Ymd') . sprintf('%04d', rand(1, 9999));
         
-        // Insert order into 'orders' table
         $stmt = $db->prepare("INSERT INTO orders (user_id, order_number, customer_name, customer_email, customer_phone, total_amount, special_instructions, created_at) VALUES (?, ?, ?, ?, ?, ?, ?, NOW())");
         $stmt->execute([
             $_SESSION['user_id'],
@@ -54,8 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         $order_id = $db->lastInsertId();
             
-        // Insert each cart item into 'order_items' table
-        $item_stmt = $db->prepare("INSERT INTO order_items (order_id, product_name, fabric, color, size, quantity, unit_price, total_price, special_instructions) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $item_stmt = $db->prepare("INSERT INTO order_items (order_id, product_name, fabric_name, color_name, size, quantity, unit_price, total_price, special_instructions) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
         foreach ($cart as $item) {
             $item_stmt->execute([
                 $order_id,
@@ -72,7 +64,6 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             
         $db->commit();
             
-        // Clear cart
         $_SESSION['cart'] = [];
             
         $_SESSION['message'] = 'Order placed successfully! Your order number is: ' . $order_number;
@@ -83,8 +74,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 
     } catch (PDOException $e) {
         $db->rollback();
-        // For a real project, you would log the error: error_log($e->getMessage());
-        $message = 'Error placing order. Please try again.';
+        $message = 'Error placing order. Please try again.'.$e->getMessage();
         $message_type = 'error';
     }
 }

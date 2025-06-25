@@ -9,14 +9,14 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Gallery - TailorCraft</title>
+    <title>Gallery - E-Tailor</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <nav class="navbar">
             <div class="nav-brand">
-                <a href="index.php">TailorCraft</a>
+                <a href="index.php">E-Tailor</a>
             </div>
             <ul class="nav-menu">
                 <li><a href="index.php">Home</a></li>
@@ -66,7 +66,7 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
             <!-- Gallery Grid -->
             <div class="gallery-grid">
                 <div class="gallery-item" data-category="shirts">
-                    <img src="https://via.placeholder.com/400x500/4a5568/ffffff?text=Business+Shirt" alt="Custom Business Shirt">
+                    <img src="img/buisness_shirt.png" alt="Custom Business Shirt" style="background-color: #eaeaea;">
                     <div class="gallery-overlay">
                         <h3>Custom Business Shirt</h3>
                         <p>Premium cotton with mother-of-pearl buttons</p>
@@ -77,7 +77,7 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                 </div>
 
                 <div class="gallery-item" data-category="shirts">
-                    <img src="https://via.placeholder.com/400x500/68d391/ffffff?text=Linen+Shirt" alt="Casual Linen Shirt">
+                    <img src="img/linenshirt.png" alt="Linen Shirt" style="background-color: #eaeaea;">
                     <div class="gallery-overlay">
                         <h3>Casual Linen Shirt</h3>
                         <p>Breathable linen for summer comfort</p>
@@ -88,9 +88,9 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                 </div>
 
                 <div class="gallery-item" data-category="pants">
-                    <img src="https://via.placeholder.com/400x500/2d3748/ffffff?text=Formal+Trousers" alt="Formal Trousers">
+                    <img src="img/formal_pants.png" alt="Formal Pants" style="background-color: #eaeaea;">
                     <div class="gallery-overlay">
-                        <h3>Formal Trousers</h3>
+                        <h3>Formal Pants</h3>
                         <p>Wool blend with perfect crease</p>
                         <?php if ($is_logged_in): ?>
                             <a href="customize.php?product=pant&price=4500" class="btn btn-secondary" style="margin-top: 1rem;">Order Similar</a>
@@ -99,7 +99,7 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                 </div>
 
                 <div class="gallery-item" data-category="pants">
-                    <img src="https://via.placeholder.com/400x500/9ca3af/ffffff?text=Casual+Chinos" alt="Casual Chinos">
+                    <img src="img/chinos.png" alt="Casual Chinos" style="background-color: #eaeaea;">
                     <div class="gallery-overlay">
                         <h3>Casual Chinos</h3>
                         <p>Cotton twill for everyday wear</p>
@@ -110,7 +110,7 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                 </div>
 
                 <div class="gallery-item" data-category="coats">
-                    <img src="https://via.placeholder.com/400x500/1a202c/ffffff?text=Business+Suit" alt="Business Suit">
+                    <img src="img/buisness_suit.png" alt="Business Suit" style="background-color: #eaeaea;">
                     <div class="gallery-overlay">
                         <h3>Business Suit</h3>
                         <p>Two-piece wool suit with silk lining</p>
@@ -121,7 +121,7 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                 </div>
 
                 <div class="gallery-item" data-category="coats">
-                    <img src="https://via.placeholder.com/400x500/7c3aed/ffffff?text=Wedding+Blazer" alt="Wedding Blazer">
+                    <img src="img/wedding_suit.png" alt="Wedding Blazer" style="background-color: #eaeaea;">
                     <div class="gallery-overlay">
                         <h3>Wedding Blazer</h3>
                         <p>Elegant blazer with custom embroidery</p>
@@ -131,8 +131,8 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                     </div>
                 </div>
 
-                <div class="gallery-item" data-category="traditional">
-                    <img src="https://via.placeholder.com/400x500/744210/ffffff?text=Daura+Suruwal" alt="Traditional Daura Suruwal">
+                <div class="gallery-item" data-category="traditional" style="background-color: #eaeaea;">
+                    <img src="img/daura1.png" alt="Traditional Daura Suruwal">
                     <div class="gallery-overlay">
                         <h3>Traditional Daura Suruwal</h3>
                         <p>Authentic Nepali formal wear</p>
@@ -143,7 +143,7 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                 </div>
 
                 <div class="gallery-item" data-category="traditional">
-                    <img src="https://via.placeholder.com/400x500/d97706/ffffff?text=Wedding+Daura" alt="Wedding Daura Suruwal">
+                    <img src="img/wedding_daura.jpg" alt="Wedding Daura Suruwal" style="background-color: #eaeaea;">
                     <div class="gallery-overlay">
                         <h3>Wedding Daura Suruwal</h3>
                         <p>Silk with gold thread work</p>
@@ -180,7 +180,7 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                 <!-- Call to Action for Non-logged Users -->
                 <section style="background: #f8f9fa; padding: 3rem 0; margin-top: 3rem; border-radius: 10px; text-align: center;">
                     <h3>Ready to Create Your Perfect Garment?</h3>
-                    <p style="margin: 1rem 0; color: #666;">Join TailorCraft today and start your custom tailoring journey!</p>
+                    <p style="margin: 1rem 0; color: #666;">Join E-Tailor today and start your custom tailoring journey!</p>
                     <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
                         <a href="register.php" class="btn btn-primary">Sign Up Now</a>
                         <a href="products.php" class="btn btn-secondary">Browse Products</a>
@@ -194,8 +194,8 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>TailorCraft</h3>
-                    <p>Bespoke tailoring for the modern individual.</p>
+                    <h3>E-Tailor</h3>
+                    <p>Tailored Clothing, Your Way.</p>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
@@ -208,7 +208,7 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 TailorCraft. All rights reserved.</p>
+                <p>&copy; 2024 E-Tailor. All rights reserved.</p>
             </div>
         </div>
     </footer>

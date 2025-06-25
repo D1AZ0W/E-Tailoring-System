@@ -9,14 +9,14 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Products - TailorCraft</title>
+    <title>Products - ETailor</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <nav class="navbar">
             <div class="nav-brand">
-                <a href="index.php">TailorCraft</a>
+                <a href="index.php">ETailor</a>
             </div>
             <ul class="nav-menu">
                 <li><a href="index.php">Home</a></li>
@@ -35,11 +35,6 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                     <a href="register.php" class="btn btn-primary">Sign Up</a>
                     <a href="cart.php" class="cart-link">Cart (<?php echo $cart_count; ?>)</a>
                 <?php endif; ?>
-            </div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
             </div>
         </nav>
     </header>
@@ -62,7 +57,6 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                 </div>
             <?php endif; ?>
             
-            <!-- Category Filter -->
             <div class="category-filter">
                 <button class="filter-btn active" data-category="all">All</button>
                 <button class="filter-btn" data-category="shirts">Shirts</button>
@@ -71,10 +65,9 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                 <button class="filter-btn" data-category="traditional">Traditional</button>
             </div>
 
-            <!-- Products Grid -->
             <div class="products-grid">
                 <div class="product-card" data-category="shirts">
-                    <img src="https://via.placeholder.com/300x400/4a5568/ffffff?text=Custom+Shirt" alt="Custom Shirt">
+                    <img src="img/linenshirt.png" alt="Custom Shirt" style="background-color: #eaeaea;">
                     <div class="product-info">
                         <h3>Custom Shirt</h3>
                         <p>Design a crisp, custom-fit shirt for any occasion.</p>
@@ -87,7 +80,7 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                 </div>
 
                 <div class="product-card" data-category="pants">
-                    <img src="https://via.placeholder.com/300x400/2d3748/ffffff?text=Custom+Pant" alt="Custom Pant">
+                    <img src="img/formal_pants.png" alt="Custom Pants" style="background-color: #eaeaea;">
                     <div class="product-info">
                         <h3>Custom Pant</h3>
                         <p>Perfectly tailored trousers for superior comfort and style.</p>
@@ -100,7 +93,7 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                 </div>
 
                 <div class="product-card" data-category="coats">
-                    <img src="https://via.placeholder.com/300x400/1a202c/ffffff?text=Custom+Coat" alt="Custom Coat">
+                    <img src="img/buisness_suit.png" alt="Custom Coat" style="background-color: #eaeaea;">
                     <div class="product-info">
                         <h3>Custom Coat</h3>
                         <p>Refined coats and blazers for a distinguished, sharp look.</p>
@@ -113,7 +106,7 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                 </div>
 
                 <div class="product-card" data-category="traditional">
-                    <img src="https://via.placeholder.com/300x400/744210/ffffff?text=Daura+Suruwal" alt="Daura Suruwal">
+                    <img src="img/daura1.png" alt="Daura Suruwal" style="background-color: #eaeaea;">
                     <div class="product-info">
                         <h3>Daura Suruwal</h3>
                         <p>Impeccably tailored national dress, honoring tradition.</p>
@@ -126,7 +119,7 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                 </div>
 
                 <div class="product-card" data-category="shirts">
-                    <img src="https://via.placeholder.com/300x400/4a5568/ffffff?text=Business+Shirt" alt="Business Shirt">
+                    <img src="img/buisness_shirt.png" alt="Custom Business Shirt" style="background-color: #eaeaea;">
                     <div class="product-info">
                         <h3>Business Shirt</h3>
                         <p>Professional shirts for the modern workplace.</p>
@@ -139,7 +132,7 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                 </div>
 
                 <div class="product-card" data-category="coats">
-                    <img src="https://via.placeholder.com/300x400/1a202c/ffffff?text=Wedding+Suit" alt="Wedding Suit">
+                    <img src="img/wedding_suit.png" alt="Wedding Blazer" style="background-color: #eaeaea;">
                     <div class="product-info">
                         <h3>Wedding Suit</h3>
                         <p>Elegant suits for your special day.</p>
@@ -158,8 +151,8 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>TailorCraft</h3>
-                    <p>Bespoke tailoring for the modern individual.</p>
+                    <h3>E-Tailor</h3>
+                    <p>Tailored Clothing, Your Way.</p>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
@@ -172,7 +165,7 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 TailorCraft. All rights reserved.</p>
+                <p>&copy; 2024 ETailor. All rights reserved.</p>
             </div>
         </div>
     </footer>

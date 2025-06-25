@@ -1,7 +1,6 @@
 <?php
 session_start();
 
-// Check if user is logged in
 $user_logged_in = isset($_SESSION['user_id']);
 
 include 'config/database.php';
@@ -9,22 +8,20 @@ include 'config/database.php';
 $database = new Database();
 $db = $database->getConnection();
 
-// Get product information
 $product_name = isset($_GET['product']) ? $_GET['product'] : 'shirt';
 $product_price = isset($_GET['price']) ? intval($_GET['price']) : 5000;
 
 $product_info = [
-    'shirt' => ['name' => 'Custom Shirt', 'image' => 'https://via.placeholder.com/600x800/4a5568/ffffff?text=Custom+Shirt'],
-    'pant' => ['name' => 'Custom Pant', 'image' => 'https://via.placeholder.com/600x800/2d3748/ffffff?text=Custom+Pant'],
-    'coat' => ['name' => 'Custom Coat', 'image' => 'https://via.placeholder.com/600x800/1a202c/ffffff?text=Custom+Coat'],
-    'daura-suruwal' => ['name' => 'Daura Suruwal', 'image' => 'https://via.placeholder.com/600x800/744210/ffffff?text=Daura+Suruwal'],
-    'business-shirt' => ['name' => 'Business Shirt', 'image' => 'https://via.placeholder.com/600x800/4a5568/ffffff?text=Business+Shirt'],
-    'wedding-suit' => ['name' => 'Wedding Suit', 'image' => 'https://via.placeholder.com/600x800/1a202c/ffffff?text=Wedding+Suit']
+    'shirt' => ['name' => 'Custom Shirt', 'image' => 'img/linenshirt.png'],
+    'pant' => ['name' => 'Custom Pant', 'image' => 'img/pant.jpeg'],
+    'coat' => ['name' => 'Custom Coat', 'image' => 'img/buisness_suit.png'],
+    'daura-suruwal' => ['name' => 'Daura Suruwal', 'image' => 'img/daura1.png'],
+    'business-shirt' => ['name' => 'Business Shirt', 'image' => 'img/buisness_shirt.png'],
+    'wedding-suit' => ['name' => 'Wedding Suit', 'image' => 'img/wedding_suit.png']
 ];
 
 $current_product = $product_info[$product_name] ?? $product_info['shirt'];
 
-// Default fabric and color options
 $fabrics = [
     ['id' => 1, 'name' => 'Cotton', 'price_modifier' => 0],
     ['id' => 2, 'name' => 'Linen', 'price_modifier' => 500],
@@ -49,14 +46,14 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Customize - TailorCraft</title>
+    <title>Customize - E-Tailor</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <nav class="navbar">
             <div class="nav-brand">
-                <a href="index.php">TailorCraft</a>
+                <a href="index.php">ETailor</a>
             </div>
             <ul class="nav-menu">
                 <li><a href="index.php">Home</a></li>
@@ -97,12 +94,10 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
             </div>
 
             <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 3rem; margin-bottom: 3rem;">
-                <!-- Left: Image Preview -->
                 <div style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
                     <img id="product-preview-image" src="<?php echo $current_product['image']; ?>" alt="Product Preview" style="width: 100%; border-radius: 10px;">
                 </div>
                 
-                <!-- Right: Customization Options -->
                 <div style="background: white; padding: 2rem; border-radius: 10px; box-shadow: 0 5px 15px rgba(0,0,0,0.1);">
                     <h2 style="font-size: 2.5rem; font-weight: bold; color: #2c3e50; margin-bottom: 1rem;"><?php echo htmlspecialchars($current_product['name']); ?></h2>
                     <p style="font-size: 1.5rem; color: #2c3e50; margin-bottom: 2rem;" id="product-price">NPR <?php echo number_format($product_price); ?></p>
@@ -111,7 +106,6 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                         <input type="hidden" name="product_name" value="<?php echo htmlspecialchars($current_product['name']); ?>">
                         <input type="hidden" name="base_price" value="<?php echo $product_price; ?>">
                         
-                        <!-- Fabric Selection -->
                         <div style="margin-bottom: 2rem;">
                             <h3 style="font-size: 1.2rem; font-weight: 600; color: #2c3e50; margin-bottom: 1rem;">1. Select Fabric</h3>
                             <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
@@ -132,7 +126,6 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                             </div>
                         </div>
 
-                        <!-- Color Selection -->
                         <div style="margin-bottom: 2rem;">
                             <h3 style="font-size: 1.2rem; font-weight: 600; color: #2c3e50; margin-bottom: 1rem;">2. Select Color</h3>
                             <div style="display: flex; gap: 1rem; flex-wrap: wrap;">
@@ -148,7 +141,6 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                             </div>
                         </div>
 
-                        <!-- Size Selection -->
                         <div class="form-group">
                             <label for="size">3. Select Size</label>
                             <select name="size" id="size" required>
@@ -163,13 +155,11 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                             </select>
                         </div>
 
-                        <!-- Special Instructions -->
                         <div class="form-group">
                             <label for="special_instructions">4. Special Instructions (Optional)</label>
                             <textarea name="special_instructions" id="special_instructions" rows="3" placeholder="Any special requirements or modifications..."></textarea>
                         </div>
 
-                        <!-- Add to Cart Button -->
                         <?php if ($user_logged_in): ?>
                             <button type="submit" class="btn btn-primary" style="width: 100%; padding: 1rem; font-size: 1.1rem;">Add to Cart</button>
                         <?php else: ?>
@@ -183,7 +173,6 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                         <?php endif; ?>
                     </form>
 
-                    <!-- Measurement Reminder -->
                     <div style="margin-top: 2rem; padding: 1rem; background: #e3f2fd; border-radius: 5px; border-left: 4px solid #2196f3;">
                         <p style="font-weight: 500; color: #1565c0;">📏 Need custom measurements?</p>
                         <p style="font-size: 0.9rem; color: #1976d2; margin-top: 0.5rem;">
@@ -199,8 +188,8 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>TailorCraft</h3>
-                    <p>Bespoke tailoring for the modern individual.</p>
+                    <h3>ETailor</h3>
+                    <p>Tailored Clothing, Your Way.</p>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
@@ -213,7 +202,7 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 TailorCraft. All rights reserved.</p>
+                <p>&copy; 2024 ETailor. All rights reserved.</p>
             </div>
         </div>
     </footer>
@@ -231,7 +220,6 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
             priceElement.textContent = 'NPR ' + totalPrice.toLocaleString();
         }
         
-        // Handle fabric selection
         document.querySelectorAll('input[name="fabric"]').forEach(option => {
             option.addEventListener('change', function() {
                 document.querySelectorAll('.fabric-swatch').forEach(swatch => {
@@ -242,7 +230,6 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
             });
         });
         
-        // Handle color selection
         document.querySelectorAll('input[name="color"]').forEach(option => {
             option.addEventListener('change', function() {
                 document.querySelectorAll('.color-swatch').forEach(swatch => {

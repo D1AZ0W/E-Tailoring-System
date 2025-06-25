@@ -63,14 +63,14 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Measurements - TailorCraft</title>
+    <title>Measurements - E-Tailor</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <nav class="navbar">
             <div class="nav-brand">
-                <a href="index.php">TailorCraft</a>
+                <a href="index.php">E-Tailor</a>
             </div>
             <ul class="nav-menu">
                 <li><a href="index.php">Home</a></li>
@@ -90,11 +90,6 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                     <a href="cart.php" class="cart-link">Cart (<?php echo $cart_count; ?>)</a>
                 <?php endif; ?>
             </div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </nav>
     </header>
 
@@ -106,7 +101,7 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                 </div>
             <?php endif; ?>
 
-            <div style="background: #e8f5e8; padding: 1rem; border-radius: 5px; margin: 100px 0 2rem; border-left: 4px solid #28a745;">
+            <div style="background: #e8f5e8; padding: 1rem; border-radius: 5px; margin-top: 100px; border-left: 4px solid #28a745;">
                 <h3>👋 Welcome, <?php echo htmlspecialchars(explode(' ', $_SESSION['user_name'])[0]); ?>!</h3>
                 <p>Let's get your measurements saved for the perfect fit on all your custom orders.</p>
             </div>
@@ -240,8 +235,8 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>TailorCraft</h3>
-                    <p>Bespoke tailoring for the modern individual.</p>
+                    <h3>E-Tailor</h3>
+                    <p>Tailored Clothing, Your Way.</p>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
@@ -254,7 +249,7 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 TailorCraft. All rights reserved.</p>
+                <p>&copy; 2024 E-Tailor. All rights reserved.</p>
             </div>
         </div>
     </footer>

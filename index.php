@@ -9,14 +9,14 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TailorCraft - Bespoke Tailoring</title>
+    <title>E-Tailor - Bespoke Tailoring</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <nav class="navbar">
             <div class="nav-brand">
-                <a href="index.php">TailorCraft</a>
+                <a href="index.php">E-Tailor</a>
             </div>
             <ul class="nav-menu">
                 <li><a href="index.php" class="active">Home</a></li>
@@ -51,10 +51,9 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
             </div>
         <?php endif; ?>
 
-        <!-- Hero Section -->
         <section class="hero">
             <div class="hero-content">
-                <h1>Bespoke Tailoring, Redefined.</h1>
+                <h1 id="caption">Tailored Clothing, Your Way.</h1>
                 <p>From classic suits to traditional Daura Surwals, we craft premium garments with precision and a perfect fit, guaranteed.</p>
                 <?php if ($is_logged_in): ?>
                     <a href="products.php" class="btn btn-primary">Start Your Design</a>
@@ -62,13 +61,13 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                 <?php else: ?>
                     <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
                         <a href="products.php" class="btn btn-primary">Browse Designs</a>
-                        <a href="register.php" class="btn btn-secondary">Join TailorCraft</a>
+                        <a href="register.php" class="btn btn-secondary">Join E-Tailor</a>
                     </div>
                 <?php endif; ?>
             </div>
         </section>
 
-        <!-- Features Section -->
+
         <section class="features">
             <div class="container">
                 <h2>Our Commitment</h2>
@@ -81,7 +80,7 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                     <div class="feature-card">
                         <div class="feature-icon">✂️</div>
                         <h3>Expert Craftsmanship</h3>
-                        <p>Every garment is tailored with meticulous attention to detail and your vision.</p>
+                        <p>Each garment is carefully made to match your style and needs.</p>
                     </div>
                     <div class="feature-card">
                         <div class="feature-icon">📏</div>
@@ -92,13 +91,12 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
             </div>
         </section>
 
-        <!-- Featured Products -->
         <section class="products">
             <div class="container">
                 <h2>Featured Designs</h2>
                 <div class="products-grid">
                     <div class="product-card">
-                        <img src="https://via.placeholder.com/300x400/4a5568/ffffff?text=Custom+Shirt" alt="Custom Shirt">
+                        <img src="img/shirt1.jpeg" alt="Custom Shirt">
                         <div class="product-info">
                             <h3>Custom Shirts</h3>
                             <p>Starting from NPR 5,000</p>
@@ -106,7 +104,7 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                         </div>
                     </div>
                     <div class="product-card">
-                        <img src="https://via.placeholder.com/300x400/2d3748/ffffff?text=Tailored+Pants" alt="Tailored Pants">
+                        <img src="img/pant.jpeg" alt="Tailored Pants">
                         <div class="product-info">
                             <h3>Tailored Pants</h3>
                             <p>Starting from NPR 4,500</p>
@@ -114,7 +112,7 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                         </div>
                     </div>
                     <div class="product-card">
-                        <img src="https://via.placeholder.com/300x400/1a202c/ffffff?text=Elegant+Coats" alt="Elegant Coats">
+                        <img src="img/coat.jpeg" alt="Elegant Coats">
                         <div class="product-info">
                             <h3>Elegant Coats</h3>
                             <p>Starting from NPR 15,000</p>
@@ -122,7 +120,7 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                         </div>
                     </div>
                     <div class="product-card">
-                        <img src="https://via.placeholder.com/300x400/744210/ffffff?text=Daura+Suruwal" alt="Daura Suruwal">
+                        <img src="img/daura1.png" alt="Daura Suruwal">
                         <div class="product-info">
                             <h3>Daura Suruwal</h3>
                             <p>Starting from NPR 12,000</p>
@@ -133,7 +131,6 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
             </div>
         </section>
 
-        <!-- Member Benefits Section (for logged-in users) -->
         <?php if ($is_logged_in): ?>
         <section class="member-benefits" style="background: #e8f5e8; padding: 60px 0;">
             <div class="container">
@@ -162,20 +159,37 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
         </section>
         <?php endif; ?>
 
-        <!-- Testimonials -->
-        <section class="testimonials">
+        <section class="about-us" style="padding: 60px 20px; background: #f9f9f9;">
+            <div class="container">
+                <h2>About E-Tailor</h2>
+                <p>
+                    At E-Tailor, we’re reimagining the timeless art of Nepali tailoring for the digital age. Born from a passion for precision and cultural heritage, our platform connects you with master artisans across Nepal—blending generations of craftsmanship with the convenience of modern technology.<br>
+                    Every stitch tells a story:<br>
+                        ✨ Heritage Meets Innovation - Traditional techniques perfected through digital customization<br>
+                        ✨ Tailored to You - Clothing shaped by your measurements, lifestyle, and personality<br>
+                        ✨ Pride in Craft - Ethically crafted garments that honor Nepal’s tailoring legacy<br>
+
+                    From boardrooms to weddings, we deliver more than garments—we craft confidence, one perfect fit at a time.
+                </p>
+            </div>
+         </section>
+
+        <section class="testimonial">
             <div class="container">
                 <h2>What Our Customers Say</h2>
                 <div class="testimonials-grid">
                     <div class="testimonial">
+                        <p>⭐⭐⭐⭐⭐</p>
                         <p>"Exceptional quality and perfect fit. The attention to detail is remarkable."</p>
                         <cite>- Rajesh Sharma</cite>
                     </div>
                     <div class="testimonial">
+                        <p>⭐⭐⭐⭐⭐</p>
                         <p>"Best tailoring service in Kathmandu. Highly recommended for custom suits."</p>
                         <cite>- Priya Thapa</cite>
                     </div>
                     <div class="testimonial">
+                        <p>⭐⭐⭐⭐⭐</p>
                         <p>"Professional service and beautiful traditional wear. Very satisfied!"</p>
                         <cite>- Amit Gurung</cite>
                     </div>
@@ -188,8 +202,8 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>TailorCraft</h3>
-                    <p>Bespoke tailoring for the modern individual. Handcrafted with passion and precision.</p>
+                    <h3>E-Tailor</h3>
+                    <p>Crafting timeless elegance, stitch by perfect stitch – where tradition meets modern tailoring.</p>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
@@ -213,12 +227,12 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                 <div class="footer-section">
                     <h4>Connect With Us</h4>
                     <p>Kathmandu, Nepal<br>
-                    contact@tailorcraft.com<br>
+                    contact_etailor@gmail.com<br>
                     +977-1-4567890</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 TailorCraft. A Tribhuwan University Project.</p>
+                <p>&copy; 2024 E-Tailor.</p>
             </div>
         </div>
     </footer>

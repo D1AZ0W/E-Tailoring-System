@@ -1,5 +1,4 @@
 <?php
-// Utility function to check if user is logged in
 function requireLogin($redirect_url = null) {
     if (!isset($_SESSION['user_id'])) {
         if ($redirect_url) {

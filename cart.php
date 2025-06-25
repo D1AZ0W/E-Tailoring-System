@@ -1,12 +1,7 @@
 <?php
 session_start();
 
-// This script displays the cart and handles updates.
-// FIX: HTML is cleaned up to use CSS classes instead of inline styles.
-
-// Handle cart updates (remove, update quantity, clear)
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
-    // User must be logged in to modify the cart
     if (!isset($_SESSION['user_id'])) {
         $_SESSION['message'] = 'Please log in to manage your cart.';
         $_SESSION['message_type'] = 'error';
@@ -39,7 +34,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['action'])) {
             $_SESSION['message_type'] = 'success';
             break;
     }
-    header('Location: cart.php'); // Redirect to avoid form resubmission
+    header('Location: cart.php');
     exit;
 }
 
@@ -55,14 +50,14 @@ $cart_count = count($cart);
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shopping Cart - TailorCraft</title>
+    <title>Shopping Cart - ETailor</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <nav class="navbar">
             <div class="nav-brand">
-                <a href="index.php">TailorCraft</a>
+                <a href="index.php">ETailor</a>
             </div>
             <ul class="nav-menu">
                 <li><a href="index.php">Home</a></li>
@@ -82,11 +77,6 @@ $cart_count = count($cart);
                     <a href="cart.php" class="cart-link">Cart (<?php echo $cart_count; ?>)</a>
                 <?php endif; ?>
             </div>
-            <div class="hamburger">
-                <span></span>
-                <span></span>
-                <span></span>
-            </div>
         </nav>
     </header>
 
@@ -101,17 +91,19 @@ $cart_count = count($cart);
             <h1 style="margin-top: <?php echo isset($_SESSION['message']) ? '2rem' : '100px'; ?>;">Shopping Cart</h1>
 
             <?php if (empty($cart)): ?>
-                <div class="cart-empty">
-                    <div class="cart-empty-icon">🛒</div>
-                    <h3>Your cart is empty</h3>
-                    <p>Start shopping to add items to your cart.</p>
-                    <a href="products.php" class="btn btn-primary">Browse Products</a>
+                <div class="container">
+                <center>
+                    <img src="https://media.istockphoto.com/id/1987775073/vector/shopping-cart-black-line-drawing-icon.jpg?s=612x612&w=0&k=20&c=zZP0Tl3NW6Q96YuaHs5UQCN7E3CGdfI30-JUcM8Z0F8=" style="width: 150px; height: 100px; margin-top: 50px;">
+                    <h2>Your cart is empty</h2>
+                    <a href="products.php" class="btn btn-primary">Browse Products</a><br>
+                </center>
                 </div>
             <?php else: ?>
-                <div class="cart-container">
-                    <table class="cart-table">
+                <div class="container">
+                    <table class="cart-table" border=1>
                         <thead>
                             <tr>
+                                <th>S.No</th>
                                 <th>Product</th>
                                 <th>Details</th>
                                 <th>Quantity</th>
@@ -127,8 +119,10 @@ $cart_count = count($cart);
                                 ?>
                                 <tr>
                                     <td>
+                                        <?php echo $index + 1; ?>
+                                    </td>
+                                    <td>
                                         <div class="cart-product-info">
-                                            <img src="https://via.placeholder.com/80x80" alt="<?php echo htmlspecialchars($item['product_name']); ?>" class="cart-product-image">
                                             <strong><?php echo htmlspecialchars($item['product_name']); ?></strong>
                                         </div>
                                     </td>
@@ -159,33 +153,32 @@ $cart_count = count($cart);
                             <?php endforeach; ?>
                         </tbody>
                     </table>
-                    
+                    <br>
                     <div class="cart-summary">
+                        <div class="total-price">Total💸: <br>NPR <?php echo number_format($total); ?></div><br>
                         <div>
                             <form method="POST">
                                 <input type="hidden" name="action" value="clear">
                                 <button type="submit" class="btn btn-danger" onclick="return confirm('Clear entire cart?')">Clear Cart</button>
                             </form>
                         </div>
-                        <div class="cart-totals">
-                            <div class="total-price">Total: NPR <?php echo number_format($total); ?></div>
+                        <br>
                             <div class="cart-actions">
                                 <a href="products.php" class="btn btn-secondary">Continue Shopping</a>
                                 <a href="checkout.php" class="btn btn-primary">Proceed to Checkout</a>
                             </div>
-                        </div>
                     </div>
                 </div>
             <?php endif; ?>
         </div>
     </main>
-
+    <br><br>
     <footer>
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>TailorCraft</h3>
-                    <p>Bespoke tailoring for the modern individual.</p>
+                    <h3>ETailor</h3>
+                    <p>Tailored Clothing, Your Way.</p>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
@@ -198,7 +191,7 @@ $cart_count = count($cart);
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; <?php echo date("Y"); ?> TailorCraft. All rights reserved.</p>
+                <p>&copy; <?php echo date("Y"); ?> ETailor. All rights reserved.</p>
             </div>
         </div>
     </footer>

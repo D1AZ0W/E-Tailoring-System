@@ -69,7 +69,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     $_SESSION['user_email'] = $email;
                     
                     // Set success message
-                    $_SESSION['message'] = 'Welcome to TailorCraft, ' . $first_name . '! Your account has been created successfully.';
+                    $_SESSION['message'] = 'Welcome to E-Tailor, ' . $first_name . '! Your account has been created successfully.';
                     $_SESSION['message_type'] = 'success';
                     
                     // Redirect to measurements page for new users
@@ -95,14 +95,14 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sign Up - TailorCraft</title>
+    <title>Sign Up - E-Tailor</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <nav class="navbar">
             <div class="nav-brand">
-                <a href="index.php">TailorCraft</a>
+                <a href="index.php">E-Tailor</a>
             </div>
             <ul class="nav-menu">
                 <li><a href="index.php">Home</a></li>
@@ -133,7 +133,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             <div class="form-container" style="max-width: 700px;">
                 <div style="text-center; margin-bottom: 2rem;">
                     <h2>Create Your Account</h2>
-                    <p style="color: #666; margin-top: 0.5rem;">Join TailorCraft and start your custom tailoring journey</p>
+                    <p style="color: #666; margin-top: 0.5rem;">Join E-Tailor and start your custom tailoring journey</p>
                 </div>
                 
                 <form method="POST" action="">
@@ -195,7 +195,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                     <div style="margin: 2rem 0;">
                         <label style="display: flex; align-items: flex-start; font-size: 0.9rem;">
                             <input id="terms" name="terms" type="checkbox" required style="margin-right: 0.5rem; margin-top: 0.25rem;">
-                            I agree to the <a href="#" style="color: #2c3e50; text-decoration: underline;">Terms of Service</a> 
+                            I agree to the  <a href="#" style="color: #2c3e50; text-decoration: underline;">Terms of Service</a> 
                             and <a href="#" style="color: #2c3e50; text-decoration: underline;">Privacy Policy</a>
                         </label>
                     </div>
@@ -250,8 +250,8 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>TailorCraft</h3>
-                    <p>Bespoke tailoring for the modern individual.</p>
+                    <h3>E-Tailor</h3>
+                    <p>Tailored Clothing, Your Way.</p>
                 </div>
                 <div class="footer-section">
                     <h4>Quick Links</h4>
@@ -264,7 +264,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 TailorCraft. All rights reserved.</p>
+                <p>&copy; 2024 E-Tailor. All rights reserved.</p>
             </div>
         </div>
     </footer>
