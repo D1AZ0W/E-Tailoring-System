@@ -167,7 +167,7 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                         </div>
                     </div>
 
-                    <h3 style="border-bottom: 2px solid #2c3e50; padding-bottom: 0.5rem; margin: 2rem 0 1.5rem;">Upper Body Measurements (cm)</h3>
+                    <h3 style="border-bottom: 2px solid #2c3e50; padding-bottom: 0.5rem; margin: 2rem 0 1.5rem;">Upper Body Measurements (inches)</h3>
                     
                     <div class="form-grid">
                         <div class="form-group">
@@ -191,7 +191,7 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                         </div>
                     </div>
 
-                    <h3 style="border-bottom: 2px solid #2c3e50; padding-bottom: 0.5rem; margin: 2rem 0 1.5rem;">Lower Body Measurements (cm)</h3>
+                    <h3 style="border-bottom: 2px solid #2c3e50; padding-bottom: 0.5rem; margin: 2rem 0 1.5rem;">Lower Body Measurements (inches)</h3>
                     
                     <div class="form-grid">
                         <div class="form-group">
