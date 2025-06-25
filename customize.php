@@ -26,16 +26,24 @@ $fabrics = [
     ['id' => 1, 'name' => 'Cotton', 'price_modifier' => 0],
     ['id' => 2, 'name' => 'Linen', 'price_modifier' => 500],
     ['id' => 3, 'name' => 'Wool', 'price_modifier' => 2000],
-    ['id' => 4, 'name' => 'Silk', 'price_modifier' => 3000]
+    ['id' => 4, 'name' => 'Silk', 'price_modifier' => 3000],
+    ['id'=> 5, 'name' => 'Polyester Blend', 'price_modifier' => -200],
+    ['id' => 6, 'name' => 'Cashmere', 'price_modifier' => 5000]
 ];
 
 $colors = [
     ['id' => 1, 'name' => 'White', 'hex_code' => '#FFFFFF'],
-    ['id' => 2, 'name' => 'Navy Blue', 'hex_code' => '#1e3a8a'],
-    ['id' => 3, 'name' => 'Charcoal', 'hex_code' => '#374151'],
-    ['id' => 4, 'name' => 'Light Grey', 'hex_code' => '#9ca3af'],
-    ['id' => 5, 'name' => 'Black', 'hex_code' => '#000000']
+    ['id' => 2, 'name' => 'Black', 'hex_code' => '#000000'],
+    ['id' => 3, 'name' => 'Navy Blue', 'hex_code' => '#1e3a8a'],
+    ['id' => 4, 'name' => 'Charcoal Grey', 'hex_code' => '#374151'],
+    ['id' => 5, 'name' => 'Light Grey', 'hex_code' => '#9ca3af'],
+    ['id' => 6, 'name' => 'Brown', 'hex_code' => '#92400e'],
+    ['id' => 7, 'name' => 'Beige', 'hex_code' => '#d2b48c'],
+    ['id' => 8, 'name' => 'Maroon', 'hex_code' => '#800000'],
+    ['id' => 9, 'name' => 'Forest Green', 'hex_code' => '#065f46'],
+    ['id' => 10, 'name' => 'Royal Blue', 'hex_code' => '#1e40af'],
 ];
+
 
 $is_logged_in = isset($_SESSION['user_id']);
 $user_name = $is_logged_in ? $_SESSION['user_name'] : '';
@@ -119,6 +127,8 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                                             <div style="font-size: 0.9rem; font-weight: 500;"><?php echo $fabric['name']; ?></div>
                                             <?php if ($fabric['price_modifier'] > 0): ?>
                                                 <div style="font-size: 0.8rem; color: #28a745;">+NPR <?php echo $fabric['price_modifier']; ?></div>
+                                            <?php elseif ($fabric['price_modifier'] < 0): ?>
+                                                <div style="font-size: 0.8rem; color: #dc3545;">-NPR <?php echo abs($fabric['price_modifier']); ?></div>
                                             <?php endif; ?>
                                         </div>
                                     </label>
