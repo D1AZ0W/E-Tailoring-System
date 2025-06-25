@@ -24,6 +24,12 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                 <li><a href="measurements.php">Measurements</a></li>
                 <li><a href="gallery.php">Gallery</a></li>
                 <li><a href="contact.php">Contact</a></li>
+                <?php 
+                    if (isset($_SESSION['user_id']) && $_SESSION['user_email'] === 'anshshrestha15@gmail.com') {
+                        echo '<li><a href="admin.php">Manage Orders Status</a></li>';
+                    }
+                ?>
+
             </ul>
             <div class="nav-auth">
                 <?php if ($is_logged_in): ?>
