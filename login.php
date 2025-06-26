@@ -61,7 +61,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Login - E-Tailor</title>
+    <title>Login - TailorGhar</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -77,7 +77,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
                 
                 <div style="text-align: center; margin-bottom: 2rem;">
                     <h2>Welcome Back</h2>
-                    <p style="color: #666;">Sign in to your E-Tailor account</p>
+                    <p style="color: #666;">Sign in to your TailorGhar account</p>
                 </div>
                 
                 <form method="POST" action="login.php<?php echo isset($_GET['redirect']) ? '?redirect=' . htmlspecialchars(urlencode($_GET['redirect'])) : ''; ?>">

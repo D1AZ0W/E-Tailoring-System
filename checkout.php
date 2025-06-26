@@ -47,7 +47,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         
         $order_id = $db->lastInsertId();
             
-        $item_stmt = $db->prepare("INSERT INTO order_items (order_id, product_name, fabric_name, color_name, size, quantity, unit_price, total_price, special_instructions) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
+        $item_stmt = $db->prepare("INSERT INTO order_items (order_id, product_name, fabric, color, size, quantity, unit_price, total_price, special_instructions) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
         foreach ($cart as $item) {
             $item_stmt->execute([
                 $order_id,

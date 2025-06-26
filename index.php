@@ -9,14 +9,14 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>E-Tailor - Bespoke Tailoring</title>
+    <title>TailorGhar</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <nav class="navbar">
             <div class="nav-brand">
-                <a href="index.php">E-Tailor</a>
+                <a href="index.php">TailorGhar</a>
             </div>
             <ul class="nav-menu">
                 <li><a href="index.php" class="active">Home</a></li>
@@ -67,7 +67,7 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                 <?php else: ?>
                     <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap;">
                         <a href="products.php" class="btn btn-primary">Browse Designs</a>
-                        <a href="register.php" class="btn btn-secondary">Join E-Tailor</a>
+                        <a href="register.php" class="btn btn-secondary">Join TailorGhar</a>
                     </div>
                 <?php endif; ?>
             </div>
@@ -167,9 +167,9 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
 
         <section class="about-us" style="padding: 60px 20px; background: #f9f9f9;">
             <div class="container">
-                <h2>About E-Tailor</h2>
+                <h2>About TailorGhar</h2>
                 <p>
-                    At E-Tailor, we’re reimagining the timeless art of Nepali tailoring for the digital age. Born from a passion for precision and cultural heritage, our platform connects you with master artisans across Nepal—blending generations of craftsmanship with the convenience of modern technology.<br>
+                    At TailorGhar, we’re reimagining the timeless art of Nepali tailoring for the digital age. Born from a passion for precision and cultural heritage, our platform connects you with master artisans across Nepal—blending generations of craftsmanship with the convenience of modern technology.<br>
                     Every stitch tells a story:<br>
                         ✨ Heritage Meets Innovation - Traditional techniques perfected through digital customization<br>
                         ✨ Tailored to You - Clothing shaped by your measurements, lifestyle, and personality<br>
@@ -208,7 +208,7 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>E-Tailor</h3>
+                    <h3>TailorGhar</h3>
                     <p>Crafting timeless elegance, stitch by perfect stitch – where tradition meets modern tailoring.</p>
                 </div>
                 <div class="footer-section">
@@ -233,12 +233,12 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                 <div class="footer-section">
                     <h4>Connect With Us</h4>
                     <p>Kathmandu, Nepal<br>
-                    contact_etailor@gmail.com<br>
+                    contact_tailorghar@gmail.com<br>
                     +977-1-4567890</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 E-Tailor.</p>
+                <p>&copy; 2024 TailorGhar.</p>
             </div>
         </div>
     </footer>

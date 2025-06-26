@@ -63,14 +63,14 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Measurements - E-Tailor</title>
+    <title>Measurements - TailorGhar</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <nav class="navbar">
             <div class="nav-brand">
-                <a href="index.php">E-Tailor</a>
+                <a href="index.php">TailorGhar</a>
             </div>
             <ul class="nav-menu">
                 <li><a href="index.php">Home</a></li>
@@ -235,7 +235,7 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>E-Tailor</h3>
+                    <h3>TailorGhar</h3>
                     <p>Tailored Clothing, Your Way.</p>
                 </div>
                 <div class="footer-section">
@@ -249,7 +249,7 @@ $cart_count = isset($_SESSION['cart']) ? count($_SESSION['cart']) : 0;
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 E-Tailor. All rights reserved.</p>
+                <p>&copy; 2024 TailorGhar. All rights reserved.</p>
             </div>
         </div>
     </footer>

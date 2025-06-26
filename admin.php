@@ -87,14 +87,14 @@ $status_config = [
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Admin - Manage Orders - E-Tailor</title>
+    <title>Admin - Manage Orders - TailorGhar</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <header>
         <nav class="navbar">
             <div class="nav-brand">
-                <a href="index.php">E-Tailor Admin</a>
+                <a href="index.php">TailorGhar Admin</a>
             </div>
             <ul class="nav-menu">
                 <li><a href="index.php">Home</a></li>
@@ -252,12 +252,12 @@ $status_config = [
         <div class="container">
             <div class="footer-content">
                 <div class="footer-section">
-                    <h3>E-Tailor Admin</h3>
+                    <h3>TailorGhar Admin</h3>
                     <p>Order management system.</p>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2024 E-Tailor. All rights reserved.</p>
+                <p>&copy; 2024 TailorGhar. All rights reserved.</p>
             </div>
         </div>
     </footer>
